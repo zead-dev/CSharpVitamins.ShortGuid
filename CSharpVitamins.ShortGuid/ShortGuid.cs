@@ -79,7 +79,7 @@ namespace CSharpVitamins
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is ShortGuid shortGuid)
             {
@@ -330,8 +330,8 @@ namespace CSharpVitamins
         /// </summary>
         public static bool operator ==(ShortGuid x, ShortGuid y)
         {
-            if (ReferenceEquals(x, null))
-                return ReferenceEquals(y, null);
+            if (Equals(x, null))
+                return Equals(y, null);
 
             return x.underlyingGuid == y.underlyingGuid;
         }
@@ -341,8 +341,8 @@ namespace CSharpVitamins
         /// </summary>
         public static bool operator ==(ShortGuid x, Guid y)
         {
-            if (ReferenceEquals(x, null))
-                return ReferenceEquals(y, null);
+            if (Equals(x, null))
+                return Equals(y, null);
 
             return x.underlyingGuid == y;
         }
